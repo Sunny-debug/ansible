@@ -4,7 +4,7 @@
   vars: 
     listjojo: BMW, Guru, Roku, Sage #String
   # Map == Dictionary  
-  - tags:
+  tags:
     Application: payment
     Environment: dev
   tasks:
@@ -14,4 +14,4 @@
 
   - name: Convert Map to list
     ansible.builtin.debug:
-      msg: "{{ tags | split(', ') }}"
+      msg: "{{ tags | dict2items }}"
