@@ -7,5 +7,7 @@
     Trainer: Sunny
   tasks:
   - name: Print the Info
+    vars:
+      COURSE: Terraform
     ansible.builtin.debug:
       msg: "Name is {{ COURSE }}, Duration: {{ DURATION }}, Trainer {{ Trainer }} "   
