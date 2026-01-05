@@ -1,24 +1,88 @@
 ---
+# YAML document start marker
+
 - name: Data Types
+  # STRING → Name of the Ansible play
+
   hosts: local
+  # STRING → Inventory host or group name
+
   connection: local
+  # STRING → Connection type (local execution)
+
   vars:
+  # MAP / DICTIONARY
+  # A map is a collection of KEY : VALUE pairs
+  # (In Python/Ansible → called a Dictionary)
+
     Model: BMW
+    # STRING
+    # Key = Model
+    # Value = "BMW"
+
     Speed: 100
+    # INTEGER
+    # Key = Speed
+    # Value = 100
+
     is_safety: true
+    # BOOLEAN
+    # Key = is_safety
+    # Value = true
+
     features:
+    # LIST (array)
+    # Ordered collection of values
       - Full Throttle
+      # STRING (list item)
       - Accelerative
+      # STRING (list item)
       - Robust
+      # STRING (list item)
+
     concepts:
+    # MAP / DICTIONARY
+    # Key-value structure (unordered)
+    # Each key maps to exactly one value
+
       Track: full
+      # STRING
+      # Key = Track
+      # Value = "full"
+
       tyres: hard
+      # STRING
+      # Key = tyres
+      # Value = "hard"
+
   tasks:
+  # LIST → Collection of tasks
+
     - name: Print Car details
+      # STRING → Task name
+
       ansible.builtin.debug:
+      # MODULE → debug module
+
         msg: >
+        # STRING (folded multiline scalar)
+
           Car: {{ Model }},
+          # STRING
+
           Speed: {{ Speed }},
+          # INTEGER → rendered as string
+
           Safety: {{ is_safety }},
+          # BOOLEAN → rendered as string
+
           Features: {{ features }},
+          # LIST → rendered as array
+
           Concepts: {{ concepts }}
+          # MAP / DICTIONARY → rendered as key-value pairs
+
+
+
+# list: []
+# map: {}          
