@@ -1,6 +1,6 @@
 ---
 - name: Data Types
-  local: host
+  local: localhost
   connection: local
   vars:
     Model: BMW
