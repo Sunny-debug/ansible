@@ -1,0 +1,9 @@
+- name: Transforming String into lists
+  hosts: local
+  connection: local
+  vars: 
+    listjojo: "BMW, Guru, Roku, Sage" #String
+  tasks:
+  - name: String to list
+  ansible.builtin.debug:
+  msg: "{{ listjojo.split(', ') }}"
