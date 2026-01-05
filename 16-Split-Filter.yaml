@@ -2,11 +2,10 @@
   hosts: local
   connection: local
   vars: 
-    listjojo: BMW, Guru, Roku, Sage #String
-  # Map == Dictionary  
-  tags:
-    Application: payment
-    Environment: dev
+    listjojo: BMW, Guru, Roku, Sage #String  
+    tags: # Map == Dictionary
+      Application: payment
+      Environment: dev
   tasks:
   - name: Convert String to list
     ansible.builtin.debug:
