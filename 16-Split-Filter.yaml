@@ -6,6 +6,11 @@
     tags: # Map == Dictionary
       Application: payment
       Environment: dev
+    listTags:
+      - key: Application
+        value: payment
+      - key: Environment
+        value: dev   
   tasks:
   - name: Convert String to list
     ansible.builtin.debug:
