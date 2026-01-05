@@ -1,0 +1,41 @@
+# Root object (map)
+student:
+  # Object (map)
+  personal_info:
+    id: 101                 # Integer
+    name: Sunny             # String
+    age: 24                 # Integer
+    is_graduate: false      # Boolean
+
+  # Object (map)
+  education:
+    university: SIU
+    program: Masters
+    major: Cybersecurity
+    graduation_year: 2025
+
+  # List (array of strings)
+  skills:
+    - Linux
+    - Docker
+    - Kubernetes
+    - AWS
+
+  # List of objects (array of maps)
+  courses:
+    - name: Cloud Computing
+      credits: 3
+      completed: true
+
+    - name: DevOps
+      credits: 4
+      completed: false
+
+    - name: Cyber Security
+      credits: 3
+      completed: true
+
+  # Object (map)
+  contact:
+    email: sunny@siu.edu
+    phone: "6181234567"
