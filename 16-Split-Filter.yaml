@@ -2,8 +2,8 @@
   hosts: local
   connection: local
   vars: 
-    listjojo: "BMW, Guru, Roku, Sage" #String
+    listjojo: BMW, Guru, Roku, Sage #String
   tasks:
   - name: String to list
     ansible.builtin.debug:
-      msg: "{{ listjojo.split(', ') }}"
+      msg: "{{ listjojo | split(', ') }}"
