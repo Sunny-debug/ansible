@@ -4,4 +4,4 @@
   tasks:
   - name: Gather Host Facts
     ansible.builtin.debug:
-      msg: {{ansible_facts}}
+      msg: {{ ansible_facts }}
