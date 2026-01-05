@@ -6,11 +6,11 @@
     tags: # Map == Dictionary
       Application: payment
       Environment: dev
-    listTags:
-      - key: Application
-        value: payment
-      - key: Environment
-        value: dev   
+    listTags:    # List
+    - key: Application
+      value: payment
+    - key: Environment
+      value: dev   
   tasks:
   - name: Convert String to list
     ansible.builtin.debug:
@@ -19,3 +19,7 @@
   - name: Convert Map to list
     ansible.builtin.debug:
       msg: "{{ tags | dict2items }}"
+
+  - name: Convert list to Map
+    ansible.builtin.debug:
+      msg: "{{ listTags | items2dict }}"
