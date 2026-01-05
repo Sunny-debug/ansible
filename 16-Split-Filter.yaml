@@ -5,6 +5,7 @@
     listjojo: BMW, Guru, Roku, Sage   # String
     name: "Sunny"
     gmail: Sunny@GMAIL.COM
+    IP_Addr: 255.255.3368.22478
     tags:                             # Map == Dictionary
       Application: payment
       Environment: dev
@@ -47,3 +48,7 @@
     - name: Convert Lowercase
       ansible.builtin.debug:
         msg: "{{ name | lower }}"
+
+    - name: Validate IP Address
+      ansible.builtin.debug:
+        msg: "{{ IP_Addr | ansible.utils.ipaddr }}"    
