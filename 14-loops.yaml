@@ -1,0 +1,12 @@
+- name: Using loops to install various Services
+  hosts: local
+  connection: local
+  - tasks:
+  name: Install Services
+  ansible.builtin.package:
+    name: "{{ Item }}" # Item is reserved
+    state: latest
+  loop: 
+  - nginx
+  - mysql
+  - zip  
