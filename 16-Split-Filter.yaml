@@ -1,33 +1,34 @@
 - name: Transforming String into lists
   hosts: local
   connection: local
-  vars: 
-    listjojo: BMW, Guru, Roku, Sage #String  
-    tags: # Map == Dictionary
+  vars:
+    listjojo: BMW, Guru, Roku, Sage   # String
+    tags:                             # Map == Dictionary
       Application: payment
       Environment: dev
-    listTags:    # List
-    - key: Application
-      value: payment
-    - key: Environment
-      value: dev   
+    listTags:                         # List
+      - key: Application
+        value: payment
+      - key: Environment
+        value: dev
+
   tasks:
-  - name: Convert String to list
-    ansible.builtin.debug:
-      msg: "{{ listjojo | split(', ') }}"
+    - name: Convert String to list
+      ansible.builtin.debug:
+        msg: "{{ listjojo | split(', ') }}"
 
-  - name: Convert Map to list
-    ansible.builtin.debug:
-      msg: "{{ tags | dict2items }}"
+    - name: Convert Map to list
+      ansible.builtin.debug:
+        msg: "{{ tags | dict2items }}"
 
-  - name: Convert list to Map
-    ansible.builtin.debug:
-      msg: "{{ listTags | items2dict }}"
+    - name: Convert list to Map
+      ansible.builtin.debug:
+        msg: "{{ listTags | items2dict }}"
 
-  - name: Read YAML and take it into variable
-    ansible.builtin.set_fact:
-      student.yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
+    - name: Read YAML and take it into variable
+      ansible.builtin.set_fact:
+        student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
 
-  - name: Convert YAML into JSON
-    ansible.builtin.debug:
-      msg: "json: {{ student.yaml | to_json }}"  
+    - name: Convert YAML into JSON
+      ansible.builtin.debug:
+        msg: "{{ student_yaml | to_nice_json }}"
