@@ -5,5 +5,5 @@
     listjojo: "BMW, Guru, Roku, Sage" #String
   tasks:
   - name: String to list
-  ansible.builtin.debug:
-  msg: "{{ listjojo.split(', ') }}"
+    ansible.builtin.debug:
+      msg: "{{ listjojo.split(', ') }}"
