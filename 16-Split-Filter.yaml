@@ -3,7 +3,15 @@
   connection: local
   vars: 
     listjojo: BMW, Guru, Roku, Sage #String
+  # Map == Dictionary  
+  tags:
+    Application: payment
+    Environment: dev
   tasks:
-  - name: String to list
+  - name: Convert String to list
     ansible.builtin.debug:
       msg: "{{ listjojo | split(', ') }}"
+
+  - name: Convert Map to list
+    ansible.builtin.debug:
+      msg: "{{ tags | split(', ') }}"
