@@ -7,8 +7,9 @@
       private: false
 
     - name: password
-      prompt: What si your password?
-
+      prompt: What is your password?
+      private: true
+      
   tasks:
     - name: Print a message
       ansible.builtin.debug:
