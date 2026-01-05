@@ -1,4 +1,4 @@
-- name: Passing Variables from Inventory
+- name: Variables through Arguments
   hosts: local
   connection: local
   tasks:
