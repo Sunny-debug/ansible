@@ -1,6 +1,6 @@
 ---
 - name: Data Types
-  local: localhost
+  hosts: local
   connection: local
   vars:
     Model: BMW
@@ -16,5 +16,9 @@
   tasks:
     - name: Print Car details
       ansible.builtin.debug:
-        msg: "Car: {{Model}}, Speed: {{Speed}}, Safety: {{is_safety}}, features:
-          {{features}}, Concepts are: {{concepts}}"
+        msg: >
+          Car: {{ Model }},
+          Speed: {{ Speed }},
+          Safety: {{ is_safety }},
+          Features: {{ features }},
+          Concepts: {{ concepts }}
