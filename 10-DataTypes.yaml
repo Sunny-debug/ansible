@@ -1,0 +1,21 @@
+- name: Data Types
+  local: host
+  connection: local
+  vars:
+    Model: "BMW" # String
+    Speed: 100  # Number
+    is_safety: True #Boolean
+    #list
+    features: # ["Full Throttle" "Accelerative" "Robust"]
+    - "Full Throttle"
+    - "Accelerative"
+    - "Robust"
+    concepts: # Dictionary or Map
+      Track: full
+      tyres: hard
+  tasks:
+  - name: Print Car details
+    ansible.builtin.debug:
+      msg: "Car: {{Model}}, Speed: {{Speed}}, Safety: {{is_safety}}, features: {{features}}, Concepts are: {{concepts}}"
+      
+         

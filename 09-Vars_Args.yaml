@@ -5,3 +5,6 @@
   - name: Print Details
     ansible.builtin.debug:
       msg: "Name is {{ COURSE }}, Duration: {{ DURATION }}, Trainer {{ Trainer }} "
+
+
+# ansible-playbook -i inventory.ini 09-Vars_Args.yaml --extra-vars "COURSE=Ansible DURATION=10H Trainer=Sunny"      
